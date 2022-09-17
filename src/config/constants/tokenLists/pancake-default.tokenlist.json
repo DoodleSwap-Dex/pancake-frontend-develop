@@ -53,10 +53,10 @@
     {
       "name": "PancakeSwap Token",
       "symbol": "CAKE",
-      "address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+      "address": "0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5",
       "chainId": 56,
       "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png"
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5.png"
     },
     {
       "name": "Venus",
@@ -120,7 +120,7 @@
       "address": "0xFa60D973F7642B748046464e165A65B7323b0DEE",
       "chainId": 97,
       "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png"
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5.png"
     },
     {
       "name": "BUSD Token",
