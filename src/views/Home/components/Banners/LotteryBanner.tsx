@@ -14,7 +14,7 @@ import getTimePeriods from 'utils/getTimePeriods'
 import Timer from 'views/Lottery/components/Countdown/Timer'
 import useGetNextLotteryEvent from 'views/Lottery/hooks/useGetNextLotteryEvent'
 import useNextEventCountdown from './hooks/useNextEventCountdown'
-import { lotteryImage, lotteryMobileImage } from './images'
+import { welcome } from './images'
 import * as S from './Styled'
 
 const RightWrapper = styled.div`
@@ -121,14 +121,14 @@ const LotteryBanner = () => {
             </>
           ) : (
             <>
-              <S.StyledSubheading>{t('Lottery')}</S.StyledSubheading>
-              <S.StyledHeading scale="xl">{t('Preparing')}</S.StyledHeading>
+              <S.StyledSubheading>{t('Welcome To')}</S.StyledSubheading>
+              <S.StyledHeading scale="xl">{t('DoodleSwap')}</S.StyledHeading>
             </>
           )}
-          <NextLinkFromReactRouter to="/lottery">
+          <NextLinkFromReactRouter to="/swap">
             <Button>
               <Text color="invertedContrast" bold fontSize="16px" mr="4px">
-                {status === FetchStatus.Fetched && isLotteryLive(data.status) ? t('Play Now') : t('Check Now')}
+                {status === FetchStatus.Fetched && isLotteryLive(data.status) ? t('Trade Now')}
               </Text>
               <ArrowForwardIcon color="invertedContrast" />
             </Button>
@@ -136,11 +136,11 @@ const LotteryBanner = () => {
         </S.LeftWrapper>
         <RightWrapper>
           {isDesktop ? (
-            <Image src={lotteryImage} alt="LotteryBanner" width={1112} height={192 + 32} placeholder="blur" />
+            <Image src={welcome} alt="LotteryBanner" width={1112} height={192 + 32} placeholder="blur" />
           ) : (
             <Image
               className="mobile"
-              src={lotteryMobileImage}
+              src={welcome}
               alt="LotteryBanner"
               width={190}
               height={144}
