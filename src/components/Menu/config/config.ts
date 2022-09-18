@@ -62,7 +62,7 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
             href: '/farms',
           },
           {
-            label: t('Pools'),
+            label: t('Pools (coming soon)'),
             href: '/pools',
             supportChainIds: SUPPORT_ONLY_BSC,
           },
