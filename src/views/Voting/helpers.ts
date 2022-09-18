@@ -41,7 +41,7 @@ export interface Message {
 }
 
 const STRATEGIES = [
-  { name: 'cake', params: { symbol: 'CAKE', address: bscTokens.cake.address, decimals: 18, max: 300 } },
+  { name: 'doodz', params: { symbol: 'DOODZ', address: bscTokens.doodz.address, decimals: 18, max: 300 } },
 ]
 const NETWORK = '56'
 

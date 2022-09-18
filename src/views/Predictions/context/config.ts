@@ -16,12 +16,12 @@ export default {
     displayedDecimals: 4,
     token: bscTokens.bnb,
   },
-  CAKE: {
+  DOODZ: {
     address: getAddress(addresses.predictionsCAKE),
     api: GRAPH_API_PREDICTION_CAKE,
     chainlinkOracleAddress: getAddress(addresses.chainlinkOracleCAKE),
     minPriceUsdDisplayed: DEFAULT_MIN_PRICE_USD_DISPLAYED,
     displayedDecimals: 4,
-    token: bscTokens.cake,
+    token: bscTokens.doodz,
   },
 }

@@ -2,7 +2,7 @@ import { FixedNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { getFarmCakeRewardApr, SerializedFarmConfig } from '@pancakeswap/farms'
 import { ChainId, CurrencyAmount, Pair } from '@pancakeswap/sdk'
-import { BUSD, CAKE } from '@pancakeswap/tokens'
+import { BUSD, DOODZ } from '@pancakeswap/tokens'
 import { farmFetcher } from './helper'
 import { FarmKV, FarmResult } from './kv'
 import { updateLPsAPR } from './lpApr'
@@ -36,8 +36,8 @@ const pairAbi = [
 
 const cakeBusdPairMap = {
   [ChainId.BSC]: {
-    address: Pair.getAddress(CAKE[ChainId.BSC], BUSD[ChainId.BSC]),
-    tokenA: CAKE[ChainId.BSC],
+    address: Pair.getAddress(DOODZ[ChainId.BSC], BUSD[ChainId.BSC]),
+    tokenA: DOODZ[ChainId.BSC],
     tokenB: BUSD[ChainId.BSC],
   },
   [ChainId.BSC_TESTNET]: {

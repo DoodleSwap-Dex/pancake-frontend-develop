@@ -11,7 +11,7 @@ describe('Info Page', () => {
 
   // skip this test because it's not stable
   it.skip('loads single pool page', () => {
-    cy.visit('/info/pool/0x58f876857a02d6762e0101bb5c46a8c1ed44dc16')
+    cy.visit('/info/pool/0x3D4c252d2D32782295b38FAfC20cf7b5F68f5619')
     cy.get('#info-pool-pair-title').should('be.visible')
   })
 

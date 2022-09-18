@@ -12,7 +12,7 @@ export const bscTokens = {
     'BNB',
     'https://www.binance.com/',
   ),
-  cake: CAKE_MAINNET,
+  doodz: CAKE_MAINNET,
   gmi: new Token(ChainId.BSC, '0x93D8d25E3C9A847a5Da79F79ecaC89461FEcA846', 18, 'GMI', 'Gamifi', 'https://gamifi.gg/'),
   tlos: new Token(
     ChainId.BSC,

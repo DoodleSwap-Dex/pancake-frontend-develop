@@ -53,40 +53,40 @@ const FooterEntry: React.FC<React.PropsWithChildren<FooterEntryProps>> = ({ labe
 }
 
 const MaxTokenEntry = ({ maxToken, ifo, poolId }: { maxToken: number; ifo: Ifo; poolId: PoolIds }) => {
-  const isCurrencyCake = ifo.currency === bscTokens.cake
+  const isCurrencyCake = ifo.currency === bscTokens.doodz
   const isV3 = ifo.version >= 3
   const { t } = useTranslation()
 
   const basicTooltipContent =
     ifo.version >= 3.1
       ? t(
-          'For the private sale, each eligible participant will be able to commit any amount of CAKE up to the maximum commit limit, which is published along with the IFO voting proposal.',
+          'For the private sale, each eligible participant will be able to commit any amount of DOODZ up to the maximum commit limit, which is published along with the IFO voting proposal.',
         )
       : t(
-          'For the basic sale, Max CAKE entry is capped by minimum between your average CAKE balance in the iCAKE, or the pool’s hard cap. To increase the max entry, Stake more CAKE into the iCAKE',
+          'For the basic sale, Max DOODZ entry is capped by minimum between your average DOODZ balance in the iCAKE, or the pool’s hard cap. To increase the max entry, Stake more CAKE into the iCAKE',
         )
 
   const unlimitedToolipContent =
     ifo.version >= 3.1 ? (
       <Box>
-        <Text display="inline">{t('For the public sale, Max CAKE entry is capped by')} </Text>
+        <Text display="inline">{t('For the public sale, Max DOODZ entry is capped by')} </Text>
         <Text bold display="inline">
           {t('the number of iCAKE.')}{' '}
         </Text>
         <Text display="inline">
-          {t('Lock more CAKE for longer durations to increase the maximum number of CAKE you can commit to the sale.')}
+          {t('Lock more DOODZ for longer durations to increase the maximum number of DOODZ you can commit to the sale.')}
         </Text>
       </Box>
     ) : (
       t(
-        'For the unlimited sale, Max CAKE entry is capped by your average CAKE balance in the iCake. To increase the max entry, Stake more CAKE into the iCake',
+        'For the unlimited sale, Max DOODZ entry is capped by your average DOODZ balance in the iCake. To increase the max entry, Stake more CAKE into the iCake',
       )
     )
 
   const tooltipContent = poolId === PoolIds.poolBasic ? basicTooltipContent : unlimitedToolipContent
 
   const { targetRef, tooltip, tooltipVisible } = useTooltip(tooltipContent, { placement: 'bottom-start' })
-  const label = isCurrencyCake ? t('Max. CAKE entry') : t('Max. token entry')
+  const label = isCurrencyCake ? t('Max. DOODZ entry') : t('Max. token entry')
   const price = useBUSDPrice(ifo.currency)
 
   const dollarValueOfToken = multiplyPriceByAmount(price, maxToken, ifo.currency.decimals)
@@ -183,7 +183,7 @@ const IfoCardDetails: React.FC<React.PropsWithChildren<IfoCardDetailsProps>> = (
         <>
           {tokenEntry}
           <FooterEntry label={t('Funds to raise:')} value={ifo[poolId].raiseAmount} />
-          {ifo[poolId].cakeToBurn !== '$0' && <FooterEntry label={t('CAKE to burn:')} value={ifo[poolId].cakeToBurn} />}
+          {ifo[poolId].cakeToBurn !== '$0' && <FooterEntry label={t('DOODZ to burn:')} value={ifo[poolId].cakeToBurn} />}
           <FooterEntry
             label={t('Price per %symbol%:', { symbol: ifo.token.symbol })}
             value={`$${ifo.tokenOfferingPrice}`}
@@ -244,7 +244,7 @@ const IfoCardDetails: React.FC<React.PropsWithChildren<IfoCardDetailsProps>> = (
           {poolId === PoolIds.poolUnlimited && <FooterEntry label={t('Additional fee:')} value={taxRate} />}
           <FooterEntry label={t('Total committed:')} value={currencyPriceInUSD.gt(0) ? totalCommitted : null} />
           <FooterEntry label={t('Funds to raise:')} value={ifo[poolId].raiseAmount} />
-          {ifo[poolId].cakeToBurn !== '$0' && <FooterEntry label={t('CAKE to burn:')} value={ifo[poolId].cakeToBurn} />}
+          {ifo[poolId].cakeToBurn !== '$0' && <FooterEntry label={t('DOODZ to burn:')} value={ifo[poolId].cakeToBurn} />}
           {ifo.version > 1 && (
             <FooterEntry
               label={t('Price per %symbol%:', { symbol: ifo.token.symbol })}

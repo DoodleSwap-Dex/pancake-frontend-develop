@@ -76,7 +76,7 @@ const CommitTokenSection: React.FC<React.PropsWithChildren<TokenSectionProps & {
   ...props
 }) => {
   if (commitToken.equals(cakeBnbLpToken)) {
-    return <TokenSection primaryToken={bscTokens.cake} secondaryToken={bscTokens.wbnb} {...props} />
+    return <TokenSection primaryToken={bscTokens.doodz} secondaryToken={bscTokens.wbnb} {...props} />
   }
   return <TokenSection primaryToken={commitToken} {...props} />
 }
@@ -129,7 +129,7 @@ const IfoCardTokens: React.FC<React.PropsWithChildren<IfoCardTokensProps>> = ({
   const { t } = useTranslation()
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     t(
-      'Sorry, you didn’t contribute enough CAKE to meet the minimum threshold. You didn’t buy anything in this sale, but you can still reclaim your CAKE.',
+      'Sorry, you didn’t contribute enough DOODZ to meet the minimum threshold. You didn’t buy anything in this sale, but you can still reclaim your CAKE.',
     ),
     { placement: 'bottom' },
   )
@@ -158,8 +158,8 @@ const IfoCardTokens: React.FC<React.PropsWithChildren<IfoCardTokensProps>> = ({
           <Box>
             <MessageText display="inline">
               {publicIfoData.status === 'finished'
-                ? t('Activate PancakeSwap Profile to take part in next IFO‘s!')
-                : t('You need an active PancakeSwap Profile to take part in an IFO!')}
+                ? t('Activate DoodleSwap Profile to take part in next IFO‘s!')
+                : t('You need an active DoodleSwap Profile to take part in an IFO!')}
             </MessageText>{' '}
             <MessageTextLink href="/ifo#ifo-how-to" color="#D67E0A" display="inline">
               {t('How does it work?')} »
@@ -281,7 +281,7 @@ const IfoCardTokens: React.FC<React.PropsWithChildren<IfoCardTokensProps>> = ({
           {ifov31Msg || (
             <>
               <Text textAlign="center" fontSize="14px">
-                {t('To participate in the next IFO, lock some CAKE in the fixed-term staking CAKE pool!')}
+                {t('To participate in the next IFO, lock some DOODZ in the fixed-term staking DOODZ pool!')}
               </Text>
               <MessageTextLink href="/ifo#ifo-how-to" textAlign="center">
                 {t('How does it work?')} »

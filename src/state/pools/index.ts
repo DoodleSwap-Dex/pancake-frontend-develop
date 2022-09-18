@@ -109,12 +109,12 @@ export const fetchCakePoolPublicDataAsync = () => async (dispatch, getState) => 
 
 export const fetchCakePoolUserDataAsync = (account: string) => async (dispatch) => {
   const allowanceCall = {
-    address: bscTokens.cake.address,
+    address: bscTokens.doodz.address,
     name: 'allowance',
     params: [account, cakeVaultAddress],
   }
   const balanceOfCall = {
-    address: bscTokens.cake.address,
+    address: bscTokens.doodz.address,
     name: 'balanceOf',
     params: [account],
   }

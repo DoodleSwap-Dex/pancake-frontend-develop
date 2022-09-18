@@ -4,9 +4,9 @@ export const CAKE_MAINNET = new Token(
   ChainId.BSC,
   '0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5',
   18,
-  'CAKE',
-  'PancakeSwap Token',
-  'https://pancakeswap.finance/',
+  'DOODZ',
+  'DoodleSwap Token',
+  'https://doodleswap.org/',
 )
 
 export const CAKE_TESTNET = new Token(
@@ -125,7 +125,7 @@ export const BUSD: Record<ChainId, Token> = {
   [ChainId.BSC_TESTNET]: BUSD_TESTNET,
 }
 
-export const CAKE = {
+export const DOODZ = {
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
 }
