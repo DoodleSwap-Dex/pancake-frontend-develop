@@ -1,151 +1,84 @@
-import { ArrowForwardIcon, Button, Heading, Skeleton, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
-import BigNumber from 'bignumber.js'
-import { NextLinkFromReactRouter } from 'components/NextLink'
-import { FetchStatus, LotteryStatus } from 'config/constants/types'
+import { ArrowForwardIcon, Button, Text, Link, useMatchBreakpoints, useIsomorphicEffect } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/image'
-import { memo } from 'react'
-import { usePriceCakeBusd } from 'state/farms/hooks'
-import { LotteryResponse } from 'state/types'
-import styled from 'styled-components'
-import useSWR from 'swr'
-import { getBalanceNumber } from 'utils/formatBalance'
-import getTimePeriods from 'utils/getTimePeriods'
-import Timer from 'views/Lottery/components/Countdown/Timer'
-import useGetNextLotteryEvent from 'views/Lottery/hooks/useGetNextLotteryEvent'
-import useNextEventCountdown from './hooks/useNextEventCountdown'
-import { welcome } from './images'
+import { memo, useMemo, useRef } from 'react'
+import styled, { useTheme } from 'styled-components'
+import { perpLangMap } from 'utils/getPerpetualLanguageCode'
+import { perpTheme } from 'utils/getPerpetualTheme'
+import { cute } from './images'
 import * as S from './Styled'
 
 const RightWrapper = styled.div`
   position: absolute;
+  min-height: 100%;
   right: 0;
-  bottom: -8px;
+  bottom: 0px;
   ${({ theme }) => theme.mediaQueries.sm} {
-    right: 1px;
-    bottom: 1px;
+    bottom: 8.2px;
   }
   ${({ theme }) => theme.mediaQueries.md} {
-    right: 0px;
-    bottom: 8px;
+    bottom: 9px;
   }
   ${({ theme }) => theme.mediaQueries.lg} {
-    right: 0px;
-    bottom: -5px;
+    bottom: -2px;
   }
 `
-const TimerWrapper = styled.div`
-  ${({ theme }) => theme.mediaQueries.sm} {
-    margin-bottom: 16px;
-  }
-  margin-bottom: 8px;
-  .custom-timer {
-    background: url('/images/decorations/countdownBg.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    padding: 0px 10px 7px;
-    display: inline-flex;
-    white-space: nowrap;
-    transform: scale(0.88);
-    transform-origin: top left;
-  }
-`
-
-export const StyledSubheading = styled(Heading)`
+const Header = styled(S.StyledHeading)`
   font-size: 20px;
-  color: white;
-  ${({ theme }) => theme.mediaQueries.xs} {
-    font-size: 24px;
-    &.lottery {
-      font-size: 20px;
-    }
-  }
+  min-height: 44px;
   ${({ theme }) => theme.mediaQueries.sm} {
-    -webkit-text-stroke: unset;
+    font-size: 40px;
+    min-height: auto;
   }
-  margin-bottom: 8px;
 `
-const isLotteryLive = (status: LotteryStatus) => status === LotteryStatus.OPEN
 
-const LotteryPrice: React.FC<React.PropsWithChildren> = () => {
-  const { data } = useSWR<LotteryResponse>(['currentLottery'])
-  const cakePriceBusd = usePriceCakeBusd()
-  const prizeInBusd = new BigNumber(data.amountCollectedInCake).times(cakePriceBusd)
-  const prizeTotal = getBalanceNumber(prizeInBusd)
-  const { t } = useTranslation()
-
-  if (isLotteryLive(data.status)) {
-    return (
-      <>
-        {prizeInBusd.isNaN() ? (
-          <Skeleton height={20} width={90} display="inline-block" />
-        ) : (
-          t('Win $%prize% in Lottery', {
-            prize: prizeTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }),
-          })
-        )}
-      </>
-    )
-  }
-  return null
-}
-
-const LotteryCountDownTimer = () => {
-  const { data } = useSWR<LotteryResponse>(['currentLottery'])
-  const endTimeAsInt = parseInt(data.endTime, 10)
-  const { nextEventTime } = useGetNextLotteryEvent(endTimeAsInt, data.status)
-  const secondsRemaining = useNextEventCountdown(nextEventTime)
-  const { days, hours, minutes, seconds } = getTimePeriods(secondsRemaining)
-  if (isLotteryLive(data.status))
-    return <Timer wrapperClassName="custom-timer" seconds={seconds} minutes={minutes} hours={hours} days={days} />
-  return null
-}
+const HEADING_ONE_LINE_HEIGHT = 27
 
 const LotteryBanner = () => {
-  const { t } = useTranslation()
-  const { isDesktop } = useMatchBreakpoints()
-  const { data, status } = useSWR<LotteryResponse>(['currentLottery'])
+  const {
+    t,
+    currentLanguage: { code },
+  } = useTranslation()
+  const { isDesktop, isMobile } = useMatchBreakpoints()
+  const { isDark } = useTheme()
+
+  const perpetualUrl = useMemo(
+    () => `https://perp.pancakeswap.finance/${perpLangMap(code)}/futures/BTCUSDT?theme=${perpTheme(isDark)}`,
+    [code, isDark],
+  )
+  const headerRef = useRef<HTMLDivElement>(null)
+
+  useIsomorphicEffect(() => {
+    const target = headerRef.current
+    target.style.fontSize = '' // reset
+    target.style.lineHeight = ''
+    if (!target || !isMobile) return
+    if (target.offsetHeight > HEADING_ONE_LINE_HEIGHT) {
+      target.style.fontSize = '18px'
+      target.style.lineHeight = `${HEADING_ONE_LINE_HEIGHT}px`
+    }
+  }, [isMobile, code])
 
   return (
     <S.Wrapper>
       <S.Inner>
         <S.LeftWrapper>
-          {status === FetchStatus.Fetched && isLotteryLive(data.status) ? (
-            <>
-              <StyledSubheading className="lottery" style={{ textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' }}>
-                <LotteryPrice />
-              </StyledSubheading>
-              <TimerWrapper>
-                <LotteryCountDownTimer />
-              </TimerWrapper>
-            </>
-          ) : (
-            <>
-              <S.StyledSubheading>{t('Welcome To')}</S.StyledSubheading>
-              <S.StyledHeading scale="xl">{t('DoodleSwap')}</S.StyledHeading>
-            </>
-          )}
-          <NextLinkFromReactRouter to="/swap">
+          <S.StyledSubheading ref={headerRef}>{t('Apply To')}</S.StyledSubheading>
+          <Header width={['160px', '160px', 'auto']}>{t('Get Listed On Farms')}</Header>
+          <Link href={perpetualUrl} external>
             <Button>
               <Text color="invertedContrast" bold fontSize="16px" mr="4px">
-                {status === FetchStatus.Fetched && isLotteryLive(data.status) ? t('Trade Now')}
+                {t('Apply Now')}
               </Text>
               <ArrowForwardIcon color="invertedContrast" />
             </Button>
-          </NextLinkFromReactRouter>
+          </Link>
         </S.LeftWrapper>
         <RightWrapper>
           {isDesktop ? (
-            <Image src={welcome} alt="LotteryBanner" width={1112} height={192 + 32} placeholder="blur" />
+            <Image src={cute} alt="LotteryBanner" width={232} height={232} placeholder="blur" />
           ) : (
-            <Image
-              className="mobile"
-              src={welcome}
-              alt="LotteryBanner"
-              width={190}
-              height={144}
-              placeholder="blur"
-            />
+            <Image src={cute} alt="LotteryBanner" width={208} height={208} placeholder="blur" />
           )}
         </RightWrapper>
       </S.Inner>

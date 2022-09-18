@@ -43,7 +43,7 @@ const PerpetualBanner = () => {
   const { isDark } = useTheme()
 
   const perpetualUrl = useMemo(
-    () => `https://doodleswap.org/farms`,
+    () => `https://perp.pancakeswap.finance/${perpLangMap(code)}/futures/BTCUSDT?theme=${perpTheme(isDark)}`,
     [code, isDark],
   )
   const headerRef = useRef<HTMLDivElement>(null)
@@ -64,7 +64,7 @@ const PerpetualBanner = () => {
       <S.Inner>
         <S.LeftWrapper>
           <S.StyledSubheading ref={headerRef}>{t('Doodz Farm Coming Soon!')}</S.StyledSubheading>
-          <Header width={['160px', '160px', 'auto']}>{t('Till Then Keep Accumulating DOODZ From Other Farms')}</Header>
+          <Header width={['160px', '160px', 'auto']}>{t('Till Then Keep Accumulating DOODZ')}</Header>
           <Link href={perpetualUrl} external>
             <Button>
               <Text color="invertedContrast" bold fontSize="16px" mr="4px">
@@ -76,7 +76,7 @@ const PerpetualBanner = () => {
         </S.LeftWrapper>
         <RightWrapper>
           {isDesktop ? (
-            <Image src={calf} alt="PerpetualBanner" width={392} height={232} placeholder="blur" />
+            <Image src={calf} alt="PerpetualBanner" width={232} height={232} placeholder="blur" />
           ) : (
             <Image src={calf} alt="PerpetualBanner" width={208} height={208} placeholder="blur" />
           )}

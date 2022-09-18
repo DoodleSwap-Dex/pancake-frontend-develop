@@ -7,7 +7,7 @@ import { memo, useEffect, useRef } from 'react'
 import { useCurrentBlock } from 'state/block/hooks'
 import styled, { keyframes } from 'styled-components'
 import { getStatus } from '../../../Ifos/hooks/helpers'
-import { IFOImage, IFOMobileImage } from './images'
+import { welcome } from './images'
 import * as S from './Styled'
 
 const IFOHeaderMobileLimitHeight = 36
@@ -82,8 +82,6 @@ const IFOBanner = () => {
 
   const activeIfoWithBlocks = useActiveIfoWithBlocks()
 
-  const ifoName = activeIfoWithBlocks?.name ?? 'XXX'
-
   const isIfoAlive = !!(currentBlock && activeIfoWithBlocks && activeIfoWithBlocks.endBlock > currentBlock)
   const status = isIfoAlive
     ? getStatus(currentBlock, activeIfoWithBlocks.startBlock, activeIfoWithBlocks.endBlock)
@@ -103,39 +101,30 @@ const IFOBanner = () => {
     <S.Wrapper>
       <S.Inner>
         <S.LeftWrapper>
-          <S.StyledSubheading>{status === 'live' ? t('Live') : t('Soon')}</S.StyledSubheading>
           <S.StyledHeading scale="xl" ref={headingRef}>
-            {ifoName} {t('IFO')}
+            {t('Welcome To DoodleSwap')}
           </S.StyledHeading>
-          <NextLinkFromReactRouter to="/ifo">
+          <NextLinkFromReactRouter to="/swap">
             <Button>
               <Text color="invertedContrast" bold fontSize="16px" mr="4px">
-                {t('Go to IFO')}
+                {t('Trade Now')}
               </Text>
               <ArrowForwardIcon color="invertedContrast" />
             </Button>
           </NextLinkFromReactRouter>
         </S.LeftWrapper>
         <RightWrapper>
-          <IFOIconImage
-            src={`/images/tokens/${activeIfoWithBlocks.token.address}.png`}
-            onError={(event) => {
-              // @ts-ignore
-              // eslint-disable-next-line no-param-reassign
-              event.target.style.display = 'none'
-            }}
-          />
           {!isMobile ? (
             <Image
-              src={IFOImage}
+              src={welcome}
               alt={`IFO ${activeIfoWithBlocks?.id ?? 'XXX'}`}
-              width={291}
+              width={211}
               height={211}
               placeholder="blur"
             />
           ) : (
             <Image
-              src={IFOMobileImage}
+              src={welcome}
               alt={`IFO ${activeIfoWithBlocks?.id ?? 'XXX'}`}
               width={150}
               height={150}

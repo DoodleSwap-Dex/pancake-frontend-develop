@@ -11,6 +11,7 @@ import perpetualImage from './perpetual.png'
 import perpetualMobileImage from './perpetualMobile.png'
 import calf from './calf.png'
 import welcome from './welcome.png'
+import cute from './cute.png'
 
 export {
   lotteryImage,
@@ -26,4 +27,5 @@ export {
   perpetualMobileImage,
   calf,
   welcome,
+  cute,
 }
