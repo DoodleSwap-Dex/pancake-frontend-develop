@@ -3,7 +3,7 @@ import { BUSD_TESTNET, CAKE_TESTNET } from './common'
 
 export const bscTestnetTokens = {
   wbnb: WBNB[ChainId.BSC_TESTNET],
-  cake: CAKE_TESTNET,
+  doodz: CAKE_TESTNET,
   busd: BUSD_TESTNET,
   syrup: new Token(
     ChainId.BSC_TESTNET,
