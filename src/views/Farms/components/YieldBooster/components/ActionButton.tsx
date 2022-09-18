@@ -33,10 +33,7 @@ const BoosterTooltip = () => {
       {t(
         `Boost multiplier is calculated based on the staking conditions from both Farms and fixed-term DOODZ chocochip pool and will be automatically updated upon user actions.`,
       )}
-      <LinkExternal
-        href="https://docs.pancakeswap.finance/products/yield-farming/bcake/faq#how-are-the-bcake-multipliers-calculated"
-        external
-      >
+      <LinkExternal href="https://doodleswap-dex.gitbook.io/docs/yield-farming" external>
         {t('Learn More')}
       </LinkExternal>
     </>

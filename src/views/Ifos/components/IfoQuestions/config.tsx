@@ -22,7 +22,7 @@ const config = [
       </Trans>,
       <>
         <Trans>Learn more about iCAKE</Trans>
-        <InlineLink ml="4px" external href="https://docs.pancakeswap.finance/products/ifo-initial-farm-offering/icake">
+        <InlineLink ml="4px" external href="https://doodleswap-dex.gitbook.io/docs/ifo-initial-farm-offering">
           <Trans>here</Trans>
         </InlineLink>
       </>,

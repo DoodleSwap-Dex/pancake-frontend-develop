@@ -36,9 +36,7 @@ const useAuth = () => {
             t('Provider Error'),
             <Box>
               <Text>{t('No provider was found')}</Text>
-              <LinkExternal href="https://docs.pancakeswap.finance/get-started/connection-guide">
-                {t('Need help ?')}
-              </LinkExternal>
+              <LinkExternal href="https://doodleswap-dex.gitbook.io/docs/">{t('Need help ?')}</LinkExternal>
             </Box>,
           )
           return

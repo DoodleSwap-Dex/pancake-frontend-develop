@@ -50,17 +50,17 @@ const stepsConfigBuilder = ({ t, userInfos, eventInfos, userStatus, account, the
         hasProfileActivated,
         eventStatus: [SaleStatusEnum.Pending, SaleStatusEnum.Premint],
       }),
-      title: t('Hold CAKE'),
-      bodyText: [t('Each NFT costs CAKE to mint. Remember you also need BNB to cover transaction fees too!')],
+      title: t('Hold DOODZ'),
+      bodyText: [t('Each NFT costs DOODZ to mint. Remember you also need BNB to cover transaction fees too!')],
       buttons: (
         <>
           <Button
             as="a"
-            href="https://pancakeswap.finance/swap?outputCurrency=0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5&chainId=56"
+            href="https://doodleswap.org/swap?outputCurrency=0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5&chainId=56"
             target="_blank"
             width="100%"
           >
-            {t('Buy CAKE')}
+            {t('Buy DOODZ')}
           </Button>
         </>
       ),

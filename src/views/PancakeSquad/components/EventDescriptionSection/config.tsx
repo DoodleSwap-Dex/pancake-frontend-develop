@@ -35,7 +35,7 @@ const eventDescriptionConfigBuilder = ({ t }: EventDescriptionType) => ({
     },
   ],
   primaryButton: {
-    to: 'https://docs.pancakeswap.finance/',
+    to: 'https://doodleswap-dex.gitbook.io/docs/',
     text: t('View Documentation'),
     external: true,
     isDisplayed: false,

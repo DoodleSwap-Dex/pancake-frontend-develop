@@ -80,7 +80,7 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
           },
           {
             label: t('Docs'),
-            href: 'https://docs.pancakeswap.finance',
+            href: 'https://doodleswap-dex.gitbook.io/docs/',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
         ].map((item) => addMenuItemSupported(item, chainId)),
