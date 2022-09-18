@@ -70,17 +70,7 @@ export const useBCakeTooltipContent = () => {
   const { t } = useTranslation()
   const tooltipContent = (
     <>
-      <Box mb="20px">
-        {t(
-          'Yield Boosters allow you to boost your farming yields by locking CAKE in the fixed-term staking CAKE pool. The more CAKE you lock, and the longer you lock them, the higher the boost you will receive.',
-        )}
-      </Box>
-      <Box>
-        {t('To learn more, check out the')}
-        <Link target="_blank" href="https://medium.com/pancakeswap/introducing-bcake-farm-yield-boosters-b27b7a6f0f84">
-          {t('Medium Article')}
-        </Link>
-      </Box>
+      <Box mb="20px">{t('Yield Boosters Coming Soon!.')}</Box>
     </>
   )
   return tooltipContent
@@ -99,9 +89,6 @@ export const BCakeBoosterCard = () => {
   })
   return (
     <CardWrapper>
-      <ImageWrapper>
-        <Image src={boosterCardImage} alt="boosterCardImage" width={99} height={191} placeholder="blur" />
-      </ImageWrapper>
       <Card p="0px" style={{ zIndex: 1 }}>
         <StyledCardBody style={{ padding: '15px 24px' }}>
           <RocketIcon />
@@ -136,7 +123,7 @@ const CardContent: React.FC = () => {
           {t('Connect wallet to view booster')}
         </Text>
         <Text color="textSubtle" fontSize={12} mb="16px">
-          {t('An active fixed-term CAKE staking position is required for activating farm yield boosters.')}
+          {t('An active fixed-term DOODZ staking position is required for activating farm yield boosters.')}
         </Text>
         <ConnectWalletButton width="100%" style={{ backgroundColor: theme.colors.textSubtle }} />
       </Box>
@@ -145,10 +132,10 @@ const CardContent: React.FC = () => {
     return (
       <Box width="100%">
         <Text color="textSubtle" fontSize={12} bold>
-          {t('No CAKE locked')}
+          {t('No DOODZ locked')}
         </Text>
         <Text color="textSubtle" fontSize={12} mb="16px">
-          {t('An active fixed-term CAKE staking position is required for activating farm yield boosters.')}
+          {t('An active fixed-term DOODZ staking position is required for activating farm yield boosters.')}
         </Text>
         <NextLink href="/pools" passHref>
           <Button as="a" width="100%" style={{ backgroundColor: theme.colors.textSubtle }}>
@@ -164,7 +151,7 @@ const CardContent: React.FC = () => {
           {t('Locked staking is ended')}
         </Text>
         <Text color="textSubtle" fontSize={12} mb="16px">
-          {t('An active fixed-term CAKE staking position is required for activating farm yield boosters.')}
+          {t('An active fixed-term DOODZ staking position is required for activating farm yield boosters.')}
         </Text>
         <NextLink href="/pools" passHref>
           <Button as="a" width="100%" style={{ backgroundColor: theme.colors.textSubtle }}>
