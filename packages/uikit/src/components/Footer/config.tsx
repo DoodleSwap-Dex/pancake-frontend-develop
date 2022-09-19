@@ -12,7 +12,7 @@ export const footerLinks: FooterLinkType[] = [
       },
       {
         label: "Blog",
-        href: "https://medium.com/pancakeswap",
+        href: "https://medium.com/@doodleswapdex",
       },
       {
         label: "Community",
@@ -88,7 +88,7 @@ export const socials = [
   {
     label: "Medium",
     icon: MediumIcon,
-    href: "https://medium.com/pancakeswap",
+    href: "https://medium.com/@doodleswapdex",
   },
 ];
 

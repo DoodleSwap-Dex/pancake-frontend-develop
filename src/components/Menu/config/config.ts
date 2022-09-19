@@ -75,7 +75,7 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
         items: [
           {
             label: t('Blog'),
-            href: 'https://medium.com/pancakeswap',
+            href: 'https://medium.com/@doodleswapdex',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
           {
