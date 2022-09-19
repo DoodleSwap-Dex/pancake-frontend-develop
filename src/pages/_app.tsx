@@ -79,7 +79,7 @@ function MyApp(props: AppProps) {
           content="The Yield Farming Bazaar on BSC! Earn DOODZ through yield farming or buy it, then stake it in ChocoChip Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by DoodleSwap), NFTs, and more, on a platform you can trust."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="😻 DoodleSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
+        <meta name="twitter:title" content="DoodleSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
         <title>DoodleSwap</title>
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
