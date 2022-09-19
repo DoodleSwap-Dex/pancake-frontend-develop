@@ -42,10 +42,7 @@ const LotteryBanner = () => {
   const { isDesktop, isMobile } = useMatchBreakpoints()
   const { isDark } = useTheme()
 
-  const perpetualUrl = useMemo(
-    () => `https://perp.pancakeswap.finance/${perpLangMap(code)}/futures/BTCUSDT?theme=${perpTheme(isDark)}`,
-    [code, isDark],
-  )
+  const perpetualUrl = useMemo(() => `https://forms.gle/iCsQf8sCH5Gtox7G9`, [code, isDark])
   const headerRef = useRef<HTMLDivElement>(null)
 
   useIsomorphicEffect(() => {

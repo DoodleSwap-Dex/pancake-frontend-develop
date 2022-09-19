@@ -87,8 +87,8 @@ export const bsc: Chain = {
     decimals: 18,
   },
   multicall: {
-    address: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    blockCreated: 15921452,
+    address: '0x1F5Dc54eAEb215C603d6a8A39A5988a935dF5389',
+    blockCreated: 21463005,
   },
 }
 

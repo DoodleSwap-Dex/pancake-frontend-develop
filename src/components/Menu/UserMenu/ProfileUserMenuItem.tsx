@@ -38,7 +38,7 @@ const ProfileUserMenuItem: React.FC<React.PropsWithChildren<ProfileUserMenuItemP
       <NextLink href="/create-profile" passHref>
         <UserMenuItem as="a" disabled={disabled}>
           <Flex alignItems="center" justifyContent="space-between" width="100%">
-            {t('Make a Profile')}
+            {t('Coming Soon')}
             <Dot />
           </Flex>
         </UserMenuItem>
@@ -49,7 +49,7 @@ const ProfileUserMenuItem: React.FC<React.PropsWithChildren<ProfileUserMenuItemP
   return (
     <NextLink href={`/profile/${account?.toLowerCase()}/achievements`} passHref>
       <UserMenuItem as="a" disabled={disabled}>
-        {t('Your Profile')}
+        {t('Coming Soon')}
       </UserMenuItem>
     </NextLink>
   )

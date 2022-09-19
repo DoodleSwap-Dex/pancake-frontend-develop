@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Text, Spinner } from '@pancakeswap/uikit'
+import { Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { AutoColumn, ColumnCenter } from 'components/Layout/Column'
 import { Trade, Currency, TradeType } from '@pancakeswap/sdk'
@@ -26,9 +26,6 @@ function ConfirmationPendingContent({ trade }: { trade: Trade<Currency, Currency
 
   return (
     <Wrapper>
-      <ConfirmedIcon>
-        <Spinner />
-      </ConfirmedIcon>
       <AutoColumn gap="12px" justify="center">
         <Text fontSize="20px">{t('Waiting For Confirmation')}</Text>
         <AutoColumn gap="12px" justify="center">
