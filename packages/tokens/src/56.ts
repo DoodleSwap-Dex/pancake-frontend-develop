@@ -30,6 +30,14 @@ export const bscTokens = {
     'Beta Finance',
     'https://betafinance.org',
   ),
+  cake: new Token(
+    ChainId.BSC,
+    '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    18,
+    'CAKE',
+    'PancakeSwap Token',
+    'https://pancakeswap.finance',
+  ),
   nft: new Token(ChainId.BSC, '0x1fC9004eC7E5722891f5f38baE7678efCB11d34D', 6, 'NFT', 'APENFT', 'https://apenft.org'),
   stephero: new Token(
     ChainId.BSC,

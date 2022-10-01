@@ -22,6 +22,13 @@ const farms: SerializedFarmConfig[] = [
     quoteToken: bscTokens.busd,
   },
   //    * V3 by order of release (some may be out of PID order due to multiplier boost)
+  {
+    pid: 6,
+    lpSymbol: 'CAKE-BNB LP',
+    lpAddress: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+    token: bscTokens.cake,
+    quoteToken: bscTokens.wbnb,
+  },
 ].map((p) => ({ ...p, token: p.token.serialize, quoteToken: p.quoteToken.serialize }))
 
 export default farms
