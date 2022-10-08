@@ -1650,6 +1650,14 @@ export const bscTokens = {
     'Coin98 Token',
     'https://coin98.com/',
   ),
+  stc: new Token(
+    ChainId.BSC,
+    '0x28D82C4D7315C02D19562dB1080a713eb5cc2639',
+    8,
+    'STC',
+    'Shitcoin',
+    'https://shitcoin69.com/',
+  ),
   pots: new Token(
     ChainId.BSC,
     '0x3Fcca8648651E5b974DD6d3e50F61567779772A8',

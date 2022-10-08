@@ -83,6 +83,14 @@
       "logoURI": "https://raw.githubusercontent.com/DoodleSwap-Dex/DoodleSwap-Tokens/main/lists/images/0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F.png"
     },
     {
+      "name": "Shitcoin",
+      "symbol": "STC",
+      "address": "0x28D82C4D7315C02D19562dB1080a713eb5cc2639",
+      "chainId": 56,
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/DoodleSwap-Dex/DoodleSwap-Tokens/main/lists/images/0x28D82C4D7315C02D19562dB1080a713eb5cc2639.png"
+    },
+    {
       "name": "Belt",
       "symbol": "BELT",
       "address": "0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f",

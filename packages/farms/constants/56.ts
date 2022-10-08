@@ -23,10 +23,10 @@ const farms: SerializedFarmConfig[] = [
   },
   //    * V3 by order of release (some may be out of PID order due to multiplier boost)
   {
-    pid: 6,
-    lpSymbol: 'CAKE-BNB LP',
-    lpAddress: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
-    token: bscTokens.cake,
+    pid: 7,
+    lpSymbol: 'STC-BNB LP',
+    lpAddress: '0x923D0Cff589104Af7FB811BAa7b4d98B0502ED5f',
+    token: bscTokens.stc,
     quoteToken: bscTokens.wbnb,
   },
 ].map((p) => ({ ...p, token: p.token.serialize, quoteToken: p.quoteToken.serialize }))

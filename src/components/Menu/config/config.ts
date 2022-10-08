@@ -69,6 +69,16 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
         ].map((item) => addMenuItemSupported(item, chainId)),
       },
       {
+        label: t('Arbitrage (coming soon)'),
+        href: '/arbitrage',
+        supportChainIds: SUPPORT_ONLY_BSC,
+      },
+      {
+        label: t('FlashLoans (coming soon)'),
+        href: '/flashloans',
+        supportChainIds: SUPPORT_ONLY_BSC,
+      },
+      {
         label: '',
         icon: MoreIcon,
         hideSubNav: true,
