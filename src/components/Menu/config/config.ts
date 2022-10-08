@@ -5,6 +5,8 @@ import {
   SwapFillIcon,
   EarnFillIcon,
   EarnIcon,
+  TrophyIcon,
+  TrophyFillIcon,
   MoreIcon,
 } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
@@ -67,6 +69,28 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
             supportChainIds: SUPPORT_ONLY_BSC,
           },
         ].map((item) => addMenuItemSupported(item, chainId)),
+      },
+      {
+        label: t('FlashLoans'),
+        href: '/liquidity',
+        icon: TrophyIcon,
+        fillIcon: TrophyFillIcon,
+        supportChainIds: SUPPORT_ONLY_BSC,
+        items: [
+          {
+            label: t('Arbitrage (coming soon)'),
+            href: '/liquidity',
+            hideSubNav: true,
+          },
+          {
+            label: t('Borrow (coming soon)'),
+            href: '/liquidity',
+          },
+          {
+            label: t('Battle (coming soon)'),
+            href: '/liquidity',
+          },
+        ],
       },
       {
         label: '',
