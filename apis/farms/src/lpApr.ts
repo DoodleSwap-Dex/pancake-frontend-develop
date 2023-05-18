@@ -15,7 +15,7 @@ interface BlockResponse {
 }
 
 const BLOCK_SUBGRAPH_ENDPOINT = 'https://api.thegraph.com/subgraphs/name/pancakeswap/blocks'
-const INFO_SUBGRAPH_ENDPOINT = 'https://bsc.streamingfast.io/subgraphs/name/pancakeswap/exchange-v2'
+const INFO_SUBGRAPH_ENDPOINT = 'https://proxy-worker.pancake-swap.workers.dev/bsc-exchange'
 
 const LP_HOLDERS_FEE = 0.0017
 const WEEKS_IN_A_YEAR = 52.1429
