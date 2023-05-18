@@ -6,7 +6,7 @@ it("renders correctly", () => {
   setupMockIntersectionObserver();
   const { asFragment } = renderWithProvider(
     <TokenImage
-      src="https://raw.githubusercontent.com/DoodleSwap-Dex/DoodleSwap-Tokens/main/lists/images/0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5.svg"
+      src="https://token.doodleswap.org/0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5.svg"
       height={48}
       width={48}
     />

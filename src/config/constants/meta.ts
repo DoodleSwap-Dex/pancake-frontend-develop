@@ -7,7 +7,7 @@ export const DEFAULT_META: PageMeta = {
   description:
     'The Yield Farming Bazaar on BSC! Earn DOODZ through yield farming or buy it, then stake it in ChocoChip Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by DoodleSwap), NFTs, and more, on a platform you can trust.',
   image:
-    'https://raw.githubusercontent.com/DoodleSwap-Dex/DoodleSwap-Tokens/main/lists/images/0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5.png',
+    'https://token.doodleswap.org/0x3c5abAFB2bad7998A5BfFB21191De2E20AF1F9D5.png',
 }
 
 interface PathList {

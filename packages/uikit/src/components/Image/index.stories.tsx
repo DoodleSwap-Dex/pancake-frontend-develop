@@ -80,7 +80,7 @@ export const TokenImages: React.FC<React.PropsWithChildren> = () => {
   return (
     <Flex flexWrap="wrap">
       {tokens.map((token) => {
-        const src = `https://raw.githubusercontent.com/DoodleSwap-Dex/DoodleSwap-Tokens/main/lists/images/${token.address[56]}.png`;
+        const src = `https://token.doodleswap.org/${token.address[56]}.png`;
 
         return (
           <StyledBox key={token.symbol} p="16px">
@@ -101,8 +101,8 @@ export const TokenPairImages: React.FC<React.PropsWithChildren> = () => {
     <Flex flexWrap="wrap">
       {tokens.map((token) => {
         const randomTokenIndex = random(0, tokens.length - 1);
-        const primarySrc = `https://raw.githubusercontent.com/DoodleSwap-Dex/DoodleSwap-Tokens/main/lists/images/${token.address[56]}.png`;
-        const secondarySrc = `https://raw.githubusercontent.com/DoodleSwap-Dex/DoodleSwap-Tokens/main/lists/images/${tokens[randomTokenIndex].address[56]}.png`;
+        const primarySrc = `https://token.doodleswap.org/${token.address[56]}.png`;
+        const secondarySrc = `https://token.doodleswap.org/${tokens[randomTokenIndex].address[56]}.png`;
 
         return (
           <StyledBox key={token.symbol} p="16px">
